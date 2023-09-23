@@ -1,7 +1,7 @@
 import csv
 import os
 
-from dirs.models import Directory
+from src.dirs.models import Directory
 
 
 class DirService:

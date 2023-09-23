@@ -1,0 +1,10 @@
+{
+  "exclude": [
+    "venv",
+    ".venv",
+    "build/*",
+    "oqd.egg-info",
+    "__pycache__"
+  ],
+  "pythonVersion": "3.10"
+}

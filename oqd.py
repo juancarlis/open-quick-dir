@@ -1,6 +1,6 @@
 import click
 
-from dirs import commands as dir_commands
+from src.dirs import commands as dir_commands
 
 
 DIRS_TABLE = ".directories.csv"

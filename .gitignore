@@ -2,4 +2,6 @@
 /venv
 /.env
 .directories.*
-*/__pycache__/
+*/__pycache__
+/__pycache__
+/oqd.egg-info

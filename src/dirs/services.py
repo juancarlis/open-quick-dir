@@ -1,7 +1,7 @@
 import csv
 import os
 
-from dirs.models import Directory
+from src.dirs.models import Directory
 
 
 class DirService:
@@ -37,6 +37,17 @@ class DirService:
         dirs.remove(deleted_dir.to_dict())
 
         self._save_to_disk(dirs)
+
+    def get_directory_path(self, dir_name_or_quick_access):
+        """Returns the directory path giving the name or the quick access."""
+        dirs = self.list_dirs()
+
+        for dir in dirs:
+            if (
+                dir["name"] == dir_name_or_quick_access
+                or dir["quick_access"] == dir_name_or_quick_access
+            ):
+                return dir["path"]
 
     def _save_to_disk(self, directories):
         tmp_table_name = self.table_name + ".tmp"

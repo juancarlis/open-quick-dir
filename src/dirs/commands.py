@@ -1,8 +1,8 @@
 import click
 
 
-from dirs.services import DirService
-from dirs.models import Directory
+from src.dirs.services import DirService
+from src.dirs.models import Directory
 
 
 @click.group()

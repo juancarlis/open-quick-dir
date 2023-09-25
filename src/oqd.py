@@ -12,7 +12,7 @@ DIRS_TABLE = Path("~/.local/share/oqd/directories.csv").expanduser()
 @click.pass_context
 def cli(ctx):
     ctx.obj = {}
-    ctx.obj["dirs_table"] = DIRS_TABLE
+    ctx.obj["dirs_table"] = str(DIRS_TABLE)
 
     # Creating database if not exists
     DIRS_TABLE.parent.mkdir(parents=True, exist_ok=True)

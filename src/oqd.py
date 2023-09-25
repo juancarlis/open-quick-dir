@@ -1,10 +1,11 @@
 import click
+from pathlib import Path
 
 from src.dirs import commands as dir_commands
 from src.navigation import commands as nav_commands
 
 
-DIRS_TABLE = ".directories.csv"
+DIRS_TABLE = Path("~/.local/share/oqd/directories.csv").expanduser()
 
 
 @click.group()
@@ -12,6 +13,12 @@ DIRS_TABLE = ".directories.csv"
 def cli(ctx):
     ctx.obj = {}
     ctx.obj["dirs_table"] = DIRS_TABLE
+
+    # Creating database if not exists
+    DIRS_TABLE.parent.mkdir(parents=True, exist_ok=True)
+
+    if not DIRS_TABLE.exists():
+        DIRS_TABLE.touch()
 
 
 cli.add_command(dir_commands.all)

@@ -1,10 +1,12 @@
 from setuptools import setup
+from pathlib import Path
 
 
 setup(
     name="oqd",
     version="0.1",
-    py_modules=["oqd"],
+    packages=["src", "src.dirs", "src.navigation"],
+    py_modules=["src.oqd"],
     install_requires=[
         "Click",
     ],
